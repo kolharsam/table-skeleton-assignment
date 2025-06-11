@@ -27,10 +27,6 @@ export default function MultiSelect({
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) {
-    return null;
-  }
-
   const handleToggle = useCallback(
     (option) => {
       const newValue = value.includes(option)
@@ -78,6 +74,10 @@ export default function MultiSelect({
         return `${value.length} options selected`;
     }
   }, [value]);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div ref={containerRef} className={cn("relative", className)}>
