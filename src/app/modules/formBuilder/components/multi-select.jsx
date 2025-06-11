@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { cn } from "./utils";
 import { ChevronDown } from "../icons";
 
@@ -19,15 +19,26 @@ export default function MultiSelect({
     setIsMounted(true);
   }, []);
 
-  const handleToggle = (option) => {
-    const newValue = value.includes(option)
-      ? value.filter((v) => v !== option)
-      : [...value, option];
-    onChange?.(newValue);
-  };
+  const handleToggle = useCallback(
+    (option) => {
+      const newValue = value.includes(option)
+        ? value.filter((v) => v !== option)
+        : [...value, option];
+      onChange?.(newValue);
+    },
+    [value, onChange]
+  );
 
-  const displayText =
-    value.length === 0 ? "Select options..." : `${value.join(", ")}`;
+  const displayText = useMemo(() => {
+    switch (value.length) {
+      case 0:
+        return "Select options...";
+      case 1:
+        return "1 choice selected";
+      default:
+        return `${value.length} choices selected`;
+    }
+  }, [value]);
 
   if (!isMounted) return null;
 
@@ -59,7 +70,7 @@ export default function MultiSelect({
         <div className="absolute z-10 w-full mt-1 bg-white border rounded-md shadow-lg max-h-48 overflow-y-auto">
           {options.map((option) => (
             <div
-              key={option}
+              key={`${option}-multi-select-checkbox`}
               className="flex items-center gap-2 p-2 hover:bg-gray-100"
             >
               <input
