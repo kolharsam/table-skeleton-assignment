@@ -7,7 +7,7 @@ export default function TextBox({ className, type, ...props }) {
     <input
       type={type}
       className={cn(
-        "w-full h-9 px-3 py-2 border rounded-md bg-white focus:ring-2 focus:ring-zinc-800 focus:border-zinc-800 disabled:opacity-50 placeholder:text-gray-500",
+        "w-full h-9 px-3 py-2 border rounded-md bg-white outline-none focus:ring-2 focus:ring-zinc-800 focus:border-zinc-800 selection:bg-zinc-800 selection:text-zinc-50 disabled:opacity-50 placeholder:text-gray-500",
         className
       )}
       {...props}
