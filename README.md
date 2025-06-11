@@ -24,10 +24,10 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 - I have added new components that help in building the `FormBuilder` component.
 - New components are:
-  - `TextBox` - [src/app/modules/formBuilder/components/text.jsx](text.jsx)
-  - `Select` - [src/app/modules/formBuilder/components/select.jsx](select.jsx)
-  - `MultiSelect` - [src/app/modules/formBuilder/components/multi-select.jsx](multi-select.jsx)
-  - `Checkbox` - [src/app/modules/formBuilder/components/checkbox.jsx](checkbox.jsx)
-  - `Button` - [src/app/modules/formBuilder/components/button.jsx](button.jsx)
-  - `Label` - [src/app/modules/formBuilder/components/label.jsx](label.jsx)
-- I have added jest tests for each ofthe form builder components.
+  - `TextBox` - [text.jsx](src/app/modules/formBuilder/components/text.jsx)
+  - `Select` - [select.jsx](src/app/modules/formBuilder/components/select.jsx)
+  - `MultiSelect` - [multi-select.jsx](src/app/modules/formBuilder/components/multi-select.jsx)
+  - `Checkbox` - [checkbox.jsx](src/app/modules/formBuilder/components/checkbox.jsx)
+  - `Button` - [button.jsx](src/app/modules/formBuilder/components/button.jsx)
+  - `Label` - [label.jsx](src/app/modules/formBuilder/components/label.jsx)
+- I have added jest tests for each of the form builder components.
