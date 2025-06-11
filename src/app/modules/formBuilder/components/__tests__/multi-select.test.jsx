@@ -44,7 +44,7 @@ describe("MultiSelect Component", () => {
       />
     );
 
-    expect(screen.getByText("Option 1, Option 3")).toBeInTheDocument();
+    expect(screen.getByText("2 options selected")).toBeInTheDocument();
   });
 
   test("handles checkbox selection", () => {
