@@ -64,14 +64,17 @@ export default function FormBuilder(props) {
               className="flex items-center space-between"
               key={field.name}
             >
-              <Components.Label htmlFor={field.name}>
+              <Components.Label
+                htmlFor={field.name}
+                className="hover:cursor-pointer"
+              >
                 {field.label}
               </Components.Label>
               <Components.Checkbox
                 id={field.name}
                 name={field.name}
                 checked={formValues[field.name]}
-                className="ml-2"
+                className="ml-2 hover:cursor-pointer"
                 onChange={(e) =>
                   dispatch({ name: field.name, value: e.target.checked })
                 }
