@@ -39,7 +39,11 @@ export default function MultiSelect({
         className="w-full p-2 border rounded-md bg-white text-left flex justify-between items-center focus:ring-2 focus:ring-zinc-800 focus:border-zinc-800"
         {...props}
       >
-        <span className={value.length === 0 ? "text-gray-500" : "text-black"}>
+        <span
+          className={`truncate max-w-[60%] ${
+            value.length === 0 ? "text-gray-500" : "text-black"
+          }`}
+        >
           {displayText}
         </span>
         <span
@@ -56,18 +60,18 @@ export default function MultiSelect({
           {options.map((option) => (
             <div
               key={option}
-              className="flex items-center gap-2 p-2 hover:bg-gray-100 hover:cursor-pointer"
+              className="flex items-center gap-2 p-2 hover:bg-gray-100"
             >
               <input
                 type="checkbox"
                 checked={value.includes(option)}
                 onChange={() => handleToggle(option)}
-                className="h-4 w-4 rounded border"
+                className="h-4 w-4 rounded border hover:cursor-pointer"
                 id={`${option}-multi-select-checkbox`}
               />
               <label
                 htmlFor={`${option}-multi-select-checkbox`}
-                className="text-sm w-full"
+                className="text-sm w-full hover:cursor-pointer select-none"
               >
                 {option}
               </label>
